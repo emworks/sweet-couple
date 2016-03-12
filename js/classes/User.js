@@ -1,9 +1,11 @@
 ;(function(app) {
 
+  app.classes = app.classes || {};
+
   /**
    * User class
    */
-  app.User = (function() {
+  app.classes.User = (function() {
 
     var User = function(obj) {
       for (var prop in obj) this[prop] = obj[prop];

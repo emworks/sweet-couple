@@ -1,8 +1,9 @@
 ;(function(app) {
 
-  var fn = app.fn,
-      storage = app.storage,
-      gifter = app.gifter;
+  var fn = app.utils.fn,
+      storage = app.utils.storage,
+      User = app.classes.User,
+      gifter = app.components.gifter;
 
   fn.ready(function() {
     // get fake users
@@ -10,8 +11,8 @@
       // save fake users at storage
       storage.set('users', data ? fn.indexBy(data, '_id') : {});
       // create test users
-      var userA = new app.User(storage.get('users')[1]),
-          userB = new app.User(storage.get('users')[4]);
+      var userA = new User(storage.get('users')[1]),
+          userB = new User(storage.get('users')[4]);
       // login as user A
       userA.login();
       // initialize gifter component

@@ -1,10 +1,12 @@
 ;(function(app) {
 
+  app.utils = app.utils || {};
+
   /**
-   * IE8+ helpers/utils
+   * IE8+ helpful functions
    * @type {Object}
    */
-  app.fn = {
+  app.utils.fn = {
 
     /**
      * forEach
@@ -16,6 +18,12 @@
         fn(array[i], i);
     },
 
+    /**
+     * find some item in array
+     * @param  {array} array
+     * @param  {string} item
+     * @return {Number}
+     */
     inArray: function(array, item) {
       for (var i = 0; i < array.length; i++) {
         if (array[i] === item)
@@ -33,7 +41,7 @@
      */
     indexBy: function(array, key) {
       var result = {};
-      app.fn.forEach(array, function(obj) {
+      this.forEach(array, function(obj) {
         result[obj[key]] = obj;
       });
       return result;
@@ -47,7 +55,7 @@
      */
     pluck: function(array, key) {
       var result = [];
-      app.fn.forEach(array, function(obj) {
+      this.forEach(array, function(obj) {
         result.push(obj[key]);
       });
       return result;
@@ -107,7 +115,8 @@
      * @param  {boolean}  async   by default set to true
      */
     request: function(url, fn, async) {
-      var request = new XMLHttpRequest(),
+      var self = this,
+          request = new XMLHttpRequest(),
           response = {};
       request.open('GET', url, async || true);
       request.onreadystatechange = function() {
@@ -115,7 +124,7 @@
           if (this.status >= 200 && this.status < 400) {
             fn(JSON.parse(this.responseText));
           } else {
-            app.fn.log(this);
+            self.log(this);
           }
         }
       };
@@ -162,24 +171,6 @@
         document.attachEvent('onreadystatechange', function() {
           if (document.readyState != 'loading')
             fn();
-        });
-      }
-    },
-
-    /**
-     * PubSub
-     * @type {Object}
-     */
-    pubsub: {
-      topics: {},
-      subscribe: function(topic, listener) {
-        if(!this.topics[topic]) this.topics[topic] = [];
-        this.topics[topic].push(listener);
-      },
-      publish: function(topic, data) {
-        if(!this.topics[topic] || this.topics[topic].length < 1) return;
-        app.fn.forEach(this.topics[topic], function(listener) {
-          listener(data || {});
         });
       }
     }

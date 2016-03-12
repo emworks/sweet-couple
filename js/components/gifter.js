@@ -1,9 +1,15 @@
 ;(function(app) {
 
-  var fn = app.fn,
-      storage = app.storage;
+  var fn = app.utils.fn,
+      pubsub = app.utils.pubsub,
+      storage = app.utils.storage;
 
-  app.gifter = (function() {
+  app.components = app.components || {};
+
+  /**
+   * Gifter component
+   */
+  app.components.gifter = (function() {
 
     /**
      * private properties and methods
@@ -49,7 +55,7 @@
       // bind component events
       bind: function(userA, userB) {
         // subscribe to target event (receiver already sent a gift)
-        fn.pubsub.subscribe('sweet-couple', _private.notify);
+        pubsub.subscribe('sweet-couple', _private.notify);
         // on gift sending
         fn.forEach(document.querySelectorAll('.gifter_send_btn'), function(el) {
           fn.addEventListener(el, 'click', function() {
@@ -65,7 +71,7 @@
             // check if user A has gifts from user B
             if (!!~fn.inArray(storage.get('userGifts'), userB.getID())) {
               // publish target event (receiver already sent a gift)
-              fn.pubsub.publish('sweet-couple', {});
+              pubsub.publish('sweet-couple', {});
             }
           });
         });

@@ -1,6 +1,11 @@
 ;(function(app) {
 
-  app.storage = (function() {
+  app.utils = app.utils || {};
+
+  /**
+   * Storage module
+   */
+  app.utils.storage = (function() {
 
     /**
      * private properties and methods
