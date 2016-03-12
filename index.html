@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Sweet Couple</title>
+    <link rel="stylesheet" href="css/app.css" media="screen" charset="utf-8">
+  </head>
+  <body>
+
+    <div id="main"></div>
+
+    <div class="wrapper-fullscreen">
+      <div class="wrapper-fullscreen_overlay va-middle ta-center">
+        <div id="gifter">
+          <div class="header">
+            <h1>Выберите пирожное в подарок</h1>
+            <a class="btn btn-close" href="javascript:void(0);"></a>
+          </div>
+          <div class="content">
+            <span class="content_image">
+              <img src="https://vk.com/images/camera_400.png" alt="" width="175" />
+            </span>
+            <div class="content_text">
+              <h2>
+                Ответит ли <a class="content_link" href="javascript:void(0);"></a>
+                взаимностью?
+              </h2>
+              <p>
+                Когда он/она подарит вам пирожное в ответ, вы оба получите призы.
+              </p>
+            </div>
+          </div>
+          <div class="tracery"></div>
+          <div class="footer"></div>
+          <div id="notification" class="invisible">
+            <div class="notification">
+              <div class="notification_header">
+                <img src="img/congratulations.png" alt="Congrats" />
+              </div>
+              <div class="notification_content">
+                <div class="notification_content__inner">
+                  <img src="img/users.png" alt="Sweet couple" />
+                  <div class="notification_content__inner_leader">
+                    Вы получаете 10 ставок в Лидере сайта
+                  </div>
+                  <h1>Объявляем вас сладкой парочкой!</h1>
+                  <h2>Алёна ответила вам взаимностью!</h2>
+                  <form action="" method="post">
+                    <input class="btn btn-submit" type="submit" value="Отлично!">
+                    <label class="share" for="share">
+                      <input type="checkbox" name="share">Рассказать друзьям
+                    </label>
+                  </form>
+                </div>
+              </div>
+              <div class="notification_footer"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/utils/fn.js" charset="utf-8"></script>
+    <script src="js/utils/storage.js" charset="utf-8"></script>
+    <script src="js/utils/pubsub.js" charset="utf-8"></script>
+    <script src="js/classes/User.js" charset="utf-8"></script>
+    <script src="js/components/gifter.js" charset="utf-8"></script>
+    <script src="js/app.js" charset="utf-8"></script>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+/* Fonts */
+
+@font-face {
+    font-family: 'intro_head_rbase';
+    src: url('fonts/introheadr-base-webfont.eot');
+    src: url('fonts/introheadr-base-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/introheadr-base-webfont.woff2') format('woff2'),
+         url('fonts/introheadr-base-webfont.woff') format('woff'),
+         url('fonts/introheadr-base-webfont.ttf') format('truetype'),
+         url('fonts/introheadr-base-webfont.svg#intro_head_rbase') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

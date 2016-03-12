@@ -1,0 +1,36 @@
+/* Controls */
+
+.btn.btn-close {
+  background: url('../../img/close_btn.png') no-repeat center transparent;
+  width: 18px;
+  height: 18px;
+  display: block;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+
+.btn.btn-send {
+  width: 90px;
+  background-color: #008ccb;
+  font-size: 12px;
+  height: 25px;
+  line-height: 25px;
+  color: #ffffff;
+  box-shadow: 1px 1px 3px 0 rgba(100,100,100,0.5);
+  border-radius: 2px;
+}
+
+.btn.btn-submit {
+  width: 110px;
+  background-color: #F1F1F1;
+  font-size: 13px;
+  height: 30px;
+  line-height: 30px;
+  color: #536069;
+  box-shadow: 1px 1px 3px 0 rgba(100,100,100,0.5);
+  border-radius: 2px;
+  border: 0 none;
+  margin: 0 3px;
+  cursor: pointer;
+}

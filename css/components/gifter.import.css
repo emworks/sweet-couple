@@ -1,0 +1,93 @@
+/* Gifter component */
+
+#gifter {
+  display: inline-block;
+  width: 585px;
+  background: url('../../img/figure.png') center #ffeab8;
+  box-shadow: 2px 2px 4px 0 rgba(0,0,0,0.75);
+  border-radius: 1px;
+  position: relative;
+  overflow: hidden;
+}
+
+#gifter h1 {
+  font-family: 'intro_head_rbase';
+  font-size: 36px;
+  font-weight: 400;
+}
+
+#gifter h2 {
+  font-family: arial;
+  font-size: 17px;
+  font-weight: 600;
+  margin: 0 0 5px;
+}
+
+#gifter .header {
+  padding-top: 25px;
+  position: relative;
+}
+
+#gifter .header h1 {
+  margin: 0 0 15px;
+  color: #403926;
+}
+
+#gifter .content .content_image {
+  display: inline-block;
+  margin-bottom: 25px;
+}
+
+#gifter .content .content_image img {
+  border: 7px solid #ffffff;
+  border-radius: 50%;
+  box-shadow: 2px 2px 4px 0 rgba(100,100,100,0.5);
+  display: inline-block;
+  position: relative;
+}
+
+/* Cakes (footer) */
+
+#gifter .tracery {
+  background: url('../../img/gifter_footer.png') no-repeat center transparent;
+  height: 50px;
+}
+
+#gifter .footer {
+  background-color: #ffffff;
+  position: relative;
+  padding: 5px 0 25px;
+}
+
+#gifter .footer .cake {
+  position: relative;
+  display: inline-block;
+  margin: 0 20px;
+  padding: 0 10px;
+  color: #536069;
+}
+
+#gifter .footer .cake:hover {
+  text-decoration: none;
+}
+
+#gifter .footer .cake img {
+  display: inline-block;
+}
+
+#gifter .footer .cake .gift_price {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #536069;
+}
+
+#gifter .footer .cake .btn.btn-send {
+  position: absolute;
+  bottom: 25px;
+  left: 0;
+  display: none;
+}
+
+#gifter .footer .cake:hover .btn.btn-send {
+  display: block;
+}

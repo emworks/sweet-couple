@@ -1,0 +1,102 @@
+/* Notification */
+
+/* Hidden (default) notification state */
+
+#notification.invisible {
+  left: -9999px;
+  background-color: transparent;
+  transition: background-color 0.5s ease 0.5s, left 0s ease 1s;
+}
+
+#notification.invisible .notification {
+  top: 100%;
+  transition: top 0.25s ease 0.5s;
+}
+
+#notification.invisible .notification .notification_header img {
+  top: 0;
+  transition: top 0.25s ease 0.5s;
+}
+
+#notification.invisible .notification .notification_content .notification_content__inner {
+  max-height: 0;
+  height: auto;
+  opacity: 0;
+  transition: max-height 0.25s ease 0.25s, opacity 0.25s ease 0s;
+}
+
+/* Visible notification state */
+
+#notification {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0,0,0.5);
+  transition: background-color 0.25s ease-out 0s;
+}
+
+#notification .notification {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transition: top 0.5s ease-out 0s;
+}
+
+#notification .notification .notification_header {
+  background: url('../../img/notification_header.png') no-repeat center transparent;
+  height: 98px;
+}
+
+#notification .notification .notification_header img {
+  position: relative;
+  top: 45px;
+  transition: top 0.5s ease-out 0.25s;
+}
+
+#notification .notification .notification_content {
+  background-color: #AF628E;
+  color: #ffffff;
+  padding: 10px 0 5px;
+}
+
+#notification .notification .notification_content h1 {
+  color: #fae9b9;
+  margin: 0;
+}
+
+#notification .notification .notification_content .notification_content__inner {
+  max-height: 500px;
+  opacity: 1;
+  transition: max-height 0.5s ease-out 0.2s, opacity 0.4s ease-out 0.6s;
+}
+
+#notification .notification .notification_content .notification_content__inner .notification_content__inner_leader {
+  display: inline-block;
+  background: url('../../img/gifts.png') no-repeat 10px center #a15681;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 10px 0 55px;
+  border-radius: 8px;
+  margin: 5px 0 15px;
+  font-family: arial;
+  font-size: 15px;
+}
+
+#notification .notification .notification_content .notification_content__inner form  {
+  padding: 15px 0 10px 165px;
+}
+
+#notification .notification .notification_content .notification_content__inner form .share input {
+  position: relative;
+  top: 2px;
+  margin: 0 3px;
+}
+
+#notification .notification .notification_footer {
+  background: url('../../img/notification_footer.png') no-repeat center transparent;
+  height: 26px;
+}

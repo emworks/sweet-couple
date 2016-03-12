@@ -1,0 +1,41 @@
+[
+  {
+    "_id": 1,
+    "name": "Vasya",
+    "image": "img/user1.jpg",
+    "money": 10,
+    "gifts": [
+      {
+        "_id": 1,
+        "from": 2
+      },
+      {
+        "_id": 2,
+        "from": 4
+      }
+    ]
+  },
+  {
+    "_id": 2,
+    "name": "Katya",
+    "image": "img/user2.jpg",
+    "money": 15,
+    "gifts": [
+      {
+        "_id": 1,
+        "from": 1
+      },
+      {
+        "_id": 3,
+        "from": 1
+      }
+    ]
+  },
+  {
+    "_id": 4,
+    "name": "Nadya",
+    "image": "img/user3.jpg",
+    "money": 7,
+    "gifts": []
+  }
+]
