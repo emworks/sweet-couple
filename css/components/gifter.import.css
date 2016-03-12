@@ -1,23 +1,5 @@
 /* Gifter component */
 
-#gifter_wrapper {
-  display: table;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-#gifter_container {
-  height: 100%;
-  width: 100%;
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
-  background-color: rgba(0, 0, 0, 0.75);
-}
-
 #gifter {
   display: inline-block;
   width: 585px;
@@ -41,22 +23,22 @@
   margin: 0 0 5px;
 }
 
-#gifter_header {
+#gifter .header {
   padding-top: 25px;
   position: relative;
 }
 
-#gifter_header h1 {
+#gifter .header h1 {
   margin: 0 0 15px;
   color: #403926;
 }
 
-.gifter_content_image {
+#gifter .content .content_image {
   display: inline-block;
   margin-bottom: 25px;
 }
 
-.gifter_content_image img {
+#gifter .content .content_image img {
   border: 7px solid #ffffff;
   border-radius: 50%;
   box-shadow: 2px 2px 4px 0 rgba(100,100,100,0.5);
@@ -64,26 +46,20 @@
   position: relative;
 }
 
-.gifter_content_text span {
-  font-size: 17px;
-  font-weight: 600;
-  font-family: arial;
-}
+/* Cakes (footer) */
 
-/* Cakes */
-
-#gifter_cakes_header {
+#gifter .tracery {
   background: url('../../img/gifter_footer.png') no-repeat center transparent;
   height: 50px;
 }
 
-#gifter_cakes {
+#gifter .footer {
   background-color: #ffffff;
   position: relative;
   padding: 5px 0 25px;
 }
 
-.gifter_send_btn {
+#gifter .footer .cake {
   position: relative;
   display: inline-block;
   margin: 0 20px;
@@ -91,137 +67,27 @@
   color: #536069;
 }
 
-.gifter_send_btn img {
+#gifter .footer .cake:hover {
+  text-decoration: none;
+}
+
+#gifter .footer .cake img {
   display: inline-block;
 }
 
-.gifter_send_btn .gift-btn {
+#gifter .footer .cake .gift_price {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #536069;
+}
+
+#gifter .footer .cake .btn.btn-send {
   position: absolute;
   bottom: 25px;
   left: 0;
   display: none;
-  width: 90px;
-  background-color: #008ccb;
-  font-size: 12px;
-  height: 25px;
-  line-height: 25px;
-  color: #ffffff;
-  box-shadow: 1px 1px 3px 0 rgba(100,100,100,0.5);
-  border-radius: 2px;
 }
 
-.gifter_send_btn:hover {
-    text-decoration: none;
-}
-
-.gifter_send_btn:hover .gift-btn {
+#gifter .footer .cake:hover .btn.btn-send {
   display: block;
-}
-
-.gifter_send_btn .gift-price {
-  margin-top: 10px;
-  font-size: 12px;
-}
-
-/* Notification */
-
-/* Hidden (default) notification state */
-
-#gifter_notify_wrapper.gifter_notify_hidden {
-  left: -9999px;
-  background-color: transparent;
-  transition: background-color 0.5s ease 0.5s, left 0s ease 1s;
-}
-
-#gifter_notify_wrapper.gifter_notify_hidden #gifter_notify {
-  top: 100%;
-  transition: top 0.25s ease 0.5s;
-}
-
-#gifter_notify_wrapper.gifter_notify_hidden #gifter_notify_header img {
-  top: 0;
-  transition: top 0.25s ease 0.5s;
-}
-
-#gifter_notify_wrapper.gifter_notify_hidden #gifter_notify_content .gifter_notify_content_inner {
-  max-height: 0;
-  height: auto;
-  opacity: 0;
-  transition: max-height 0.25s ease 0.25s, opacity 0.25s ease 0s;
-}
-
-/* Visible notification state */
-
-#gifter_notify_wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(0,0,0,0.5);
-  transition: background-color 0.25s ease-out 0s;
-}
-
-#gifter_notify {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  transition: top 0.5s ease-out 0s;
-}
-
-#gifter_notify_header {
-  background: url('../../img/notification_header.png') no-repeat center transparent;
-  height: 98px;
-}
-
-#gifter_notify_header img {
-  position: relative;
-  top: 45px;
-  transition: top 0.5s ease-out 0.25s;
-}
-
-#gifter_notify_content {
-  background-color: #AF628E;
-  color: #ffffff;
-  padding: 10px 0 5px;
-}
-
-#gifter_notify_content h1 {
-  color: #fae9b9;
-  margin: 0;
-}
-
-#gifter_notify_content .gifter_notify_content_inner {
-  max-height: 500px;
-  opacity: 1;
-  transition: max-height 0.5s ease-out 0.2s, opacity 0.4s ease-out 0.6s;
-}
-
-#gifter_notify_content .gifter_notify_content_leader {
-  display: inline-block;
-  background: url('../../img/gifts.png') no-repeat 10px center #a15681;
-  height: 50px;
-  line-height: 50px;
-  padding: 0 10px 0 55px;
-  border-radius: 8px;
-  margin: 5px 0 15px;
-  font-family: arial;
-  font-size: 15px;
-}
-
-#gifter_form {
-  padding: 15px 0 10px 165px;
-}
-
-.share input {
-  position: relative;
-  top: 2px;
-  margin: 0 3px;
-}
-
-#gifter_notify_footer {
-  background: url('../../img/notification_footer.png') no-repeat center transparent;
-  height: 26px;
 }

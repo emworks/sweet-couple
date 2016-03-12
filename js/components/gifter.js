@@ -17,18 +17,20 @@
      */
     var _private = {
 
+      container: document.getElementById('gifter'),
+
       // render component
       render: function(user) {
 
         // render users
-        var userContainer = document.getElementById('gifter_content'),
+        var userContainer = this.container.querySelectorAll('.content')[0],
             userImg = userContainer.querySelectorAll('img')[0],
-            userLink = userContainer.querySelectorAll('a')[0];
+            userLink = userContainer.querySelectorAll('.content_link')[0];
         userImg.setAttribute('src', user.getImage());
         userLink.innerHTML = user.getName();
 
         // render gifts
-        var giftsContainer = document.getElementById('gifter_cakes'),
+        var giftsContainer = this.container.querySelectorAll('.footer')[0],
             giftElement = null,
             data = storage.get('gifts');
         fn.forEach(data, function(gift) {
@@ -36,15 +38,15 @@
           var giftImg = document.createElement('img'),
               giftBtn = document.createElement('div'),
               giftPrice = document.createElement('div');
-          giftElement.className = 'gifter_send_btn';
+          giftElement.className = 'cake';
           giftElement.setAttribute('href', 'javascript:void(0);');
           giftElement.setAttribute('data-id', gift._id);
           giftImg.setAttribute('src', gift.image);
           giftElement.appendChild(giftImg);
-          giftBtn.className = 'btn gift-btn';
+          giftBtn.className = 'btn btn-send';
           giftBtn.innerHTML = 'Отправить';
           giftElement.appendChild(giftBtn);
-          giftPrice.className = 'gift-price';
+          giftPrice.className = 'gift_price';
           giftPrice.innerHTML = gift.price ? gift.price + ' ФМ' : 'Бесплатно';
           giftElement.appendChild(giftPrice);
           giftsContainer.appendChild(giftElement);
@@ -57,7 +59,7 @@
         // subscribe to target event (receiver already sent a gift)
         pubsub.subscribe('sweet-couple', _private.notify);
         // on gift sending
-        fn.forEach(document.querySelectorAll('.gifter_send_btn'), function(el) {
+        fn.forEach(this.container.querySelectorAll('.cake'), function(el) {
           fn.addEventListener(el, 'click', function() {
             // update userB and users storage
             userB.setGifts({
@@ -79,14 +81,14 @@
 
       // receiver already sent a gift => notify user
       notify: function() {
-        var notification = document.getElementById('gifter_notify_wrapper'),
-            notificationClass = 'gifter_notify_hidden';
+        var notification = document.getElementById('notification'),
+            notificationClass = 'invisible';
         fn.removeClass(notification, notificationClass);
-        fn.addEventListener(document.getElementById('gifter_form'), 'submit',
+        fn.addEventListener(notification.querySelectorAll('form')[0], 'submit',
           function(event) {
             event.preventDefault();
             fn.addClass(notification, notificationClass);
-            fn.removeEventListener(document.getElementById('gifter_form'), 'submit');
+            fn.removeEventListener(notification.querySelectorAll('form')[0], 'submit');
           }
         );
       }
