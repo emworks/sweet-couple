@@ -36,10 +36,10 @@
           giftImg.setAttribute('src', gift.image);
           giftElement.appendChild(giftImg);
           giftBtn.className = 'btn gift-btn';
-          giftBtn.innerHTML = 'Send';
+          giftBtn.innerHTML = 'Отправить';
           giftElement.appendChild(giftBtn);
           giftPrice.className = 'gift-price';
-          giftPrice.innerHTML = gift.price ? '$' + gift.price : 'Free';
+          giftPrice.innerHTML = gift.price ? gift.price + ' ФМ' : 'Бесплатно';
           giftElement.appendChild(giftPrice);
           giftsContainer.appendChild(giftElement);
           giftElement = null;

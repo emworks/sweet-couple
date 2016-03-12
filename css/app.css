@@ -1,13 +1,23 @@
+@font-face {
+    font-family: 'intro_head_rbase';
+    src: url('fonts/introheadr-base-webfont.eot');
+    src: url('fonts/introheadr-base-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/introheadr-base-webfont.woff2') format('woff2'),
+         url('fonts/introheadr-base-webfont.woff') format('woff'),
+         url('fonts/introheadr-base-webfont.ttf') format('truetype'),
+         url('fonts/introheadr-base-webfont.svg#intro_head_rbase') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 html, body {
   height: 100%;
   font-size: 13px;
   font-family: tahoma, sans-serif;
+  color: #222d35;
   padding: 0;
   margin: 0;
-}
-
-h1 {
-  margin: 0 0 10px;
 }
 
 a {
@@ -69,9 +79,27 @@ p {
   overflow: hidden;
 }
 
+#gifter h1 {
+  font-family: 'intro_head_rbase';
+  font-size: 36px;
+  font-weight: 400;
+}
+
+#gifter h2 {
+  font-family: arial;
+  font-size: 17px;
+  font-weight: 600;
+  margin: 0 0 5px;
+}
+
 #gifter_header {
   padding-top: 25px;
   position: relative;
+}
+
+#gifter_header h1 {
+  margin: 0 0 15px;
+  color: #403926;
 }
 
 .btn-close {
@@ -225,6 +253,11 @@ p {
   padding: 10px 0 5px;
 }
 
+#gifter_notify_content h1 {
+  color: #fae9b9;
+  margin: 0;
+}
+
 #gifter_notify_content .gifter_notify_content_inner {
   max-height: 500px;
   opacity: 1;
@@ -233,16 +266,18 @@ p {
 
 #gifter_notify_content .gifter_notify_content_leader {
   display: inline-block;
-  background: url('../img/gifts.png') no-repeat 10px center rgba(178,78,125,0.5);
+  background: url('../img/gifts.png') no-repeat 10px center #a15681;
   height: 50px;
   line-height: 50px;
   padding: 0 10px 0 55px;
   border-radius: 8px;
-  margin-bottom: 15px;
+  margin: 5px 0 15px;
+  font-family: arial;
+  font-size: 15px;
 }
 
 #gifter_form {
-  padding: 20px 0 10px 52px;
+  padding: 15px 0 10px 165px;
 }
 
 .submit-btn {
