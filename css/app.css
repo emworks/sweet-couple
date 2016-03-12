@@ -1,6 +1,9 @@
 html, body {
   height: 100%;
   font-size: 13px;
+  font-family: tahoma, sans-serif;
+  padding: 0;
+  margin: 0;
 }
 
 h1 {
@@ -10,7 +13,7 @@ h1 {
 a {
   outline: 0 none;
   text-decoration: none;
-  color: #008ccb;
+  color: #008bc8;
 }
 
 a:hover {
@@ -63,6 +66,7 @@ p {
   box-shadow: 2px 2px 4px 0 rgba(0,0,0,0.75);
   border-radius: 1px;
   position: relative;
+  overflow: hidden;
 }
 
 #gifter_header {
@@ -93,14 +97,10 @@ p {
   position: relative;
 }
 
-.gifter_content_text {
-  font-size: 14px;
-  font-weight: 600;
-}
-
 .gifter_content_text span {
-  font-size: 12px;
-  font-weight: 400;
+  font-size: 17px;
+  font-weight: 600;
+  font-family: arial;
 }
 
 /**
@@ -123,7 +123,7 @@ p {
   display: inline-block;
   margin: 0 20px;
   padding: 0 10px;
-  color: #255E96;
+  color: #536069;
 }
 
 .gifter_send_btn img {
@@ -171,7 +171,7 @@ p {
 }
 
 #gifter_notify_wrapper.gifter_notify_hidden #gifter_notify {
-  top: -100%;
+  top: 100%;
   transition: top 0.25s ease 0.5s;
 }
 
@@ -196,7 +196,7 @@ p {
   height: 100%;
   width: 100%;
   background-color: rgba(0,0,0,0.5);
-  transition: background-color 0.25s ease 0s;
+  transition: background-color 0.25s ease-out 0s;
 }
 
 #gifter_notify {
@@ -205,7 +205,7 @@ p {
   left: 0;
   height: 100%;
   width: 100%;
-  transition: top 0.5s ease 0.25s;
+  transition: top 0.5s ease-out 0s;
 }
 
 #gifter_notify_header {
@@ -216,18 +216,19 @@ p {
 #gifter_notify_header img {
   position: relative;
   top: 45px;
-  transition: top 0.5s ease-in 0.5s;
+  transition: top 0.5s ease-out 0.25s;
 }
 
 #gifter_notify_content {
-  background-color: #c66291;
+  background-color: #AF628E;
   color: #ffffff;
+  padding: 10px 0 5px;
 }
 
 #gifter_notify_content .gifter_notify_content_inner {
   max-height: 500px;
   opacity: 1;
-  transition: max-height 0.25s ease-in 0.5s, opacity 0.25s ease 0.75s;
+  transition: max-height 0.5s ease-out 0.2s, opacity 0.4s ease-out 0.6s;
 }
 
 #gifter_notify_content .gifter_notify_content_leader {
@@ -246,15 +247,16 @@ p {
 
 .submit-btn {
   width: 110px;
-  background-color: #ffffff;
+  background-color: #F1F1F1;
   font-size: 13px;
   height: 30px;
   line-height: 30px;
-  color: #255E96;
+  color: #536069;
   box-shadow: 1px 1px 3px 0 rgba(100,100,100,0.5);
   border-radius: 2px;
   border: 0 none;
   margin: 0 3px;
+  cursor: pointer;
 }
 
 .share input {

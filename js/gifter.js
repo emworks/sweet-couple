@@ -59,7 +59,7 @@
               "from": userA.getID()
             });
 
-            // here we can make request to the server
+            // here we can send data to the server
             // all data is available at storage.users
 
             // check if user A has gifts from user B
@@ -77,7 +77,8 @@
             notificationClass = 'gifter_notify_hidden';
         fn.removeClass(notification, notificationClass);
         fn.addEventListener(document.getElementById('gifter_form'), 'submit',
-          function() {
+          function(event) {
+            event.preventDefault();
             fn.addClass(notification, notificationClass);
             fn.removeEventListener(document.getElementById('gifter_form'), 'submit');
           }
