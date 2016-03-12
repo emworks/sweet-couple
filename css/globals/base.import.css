@@ -1,0 +1,24 @@
+/* Top level rules */
+
+html, body {
+  height: 100%;
+  font-size: 13px;
+  font-family: tahoma, sans-serif;
+  color: #222d35;
+  padding: 0;
+  margin: 0;
+}
+
+a:link, a:visited, a:active {
+  outline: 0 none;
+  text-decoration: none;
+  color: #008bc8;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+p {
+  margin: 0 0 5px;
+}
